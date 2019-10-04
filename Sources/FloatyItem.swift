@@ -252,6 +252,8 @@ open class FloatyItem: UIView {
     shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
     shadowLayer.shadowOpacity = 0.8
     shadowLayer.shadowRadius = 6
+    
+    titleLabel.layer.cornerRadius = 6
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
