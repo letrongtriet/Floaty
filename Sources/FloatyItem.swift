@@ -221,17 +221,15 @@ open class FloatyItem: UIView {
   open override func layoutSubviews() {
     super.layoutSubviews()
     
-    let shadowLayer = CAShapeLayer()
-    shadowLayer.path = UIBezierPath(roundedRect: titleLabel.bounds, cornerRadius: 6).cgPath
-    shadowLayer.fillColor = UIColor.white.cgColor
-
-    shadowLayer.shadowColor = UIColor.darkGray.cgColor
-    shadowLayer.shadowPath = shadowLayer.path
-    shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-    shadowLayer.shadowOpacity = 0.8
-    shadowLayer.shadowRadius = 2
-
-    titleLabel.layer.addSublayer(shadowLayer)
+    titleLabel.layer.borderWidth = 0.2
+    titleLabel.layer.borderColor = UIColor.clear.cgColor
+    titleLabel.layer.shadowColor = UIColor.gray.cgColor
+    titleLabel.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(2.0))
+    titleLabel.layer.shadowRadius = 1
+    titleLabel.layer.shadowOpacity = 0.8
+    titleLabel.layer.cornerRadius = 5.0
+    titleLabel.layer.masksToBounds = false
+    titleLabel.backgroundColor = .white
   }
   
   fileprivate func createCircleLayer() {
