@@ -218,6 +218,22 @@ open class FloatyItem: UIView {
     }
   }
   
+  open override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    let shadowLayer = CAShapeLayer()
+    shadowLayer.path = UIBezierPath(roundedRect: titleLabel.bounds, cornerRadius: 6).cgPath
+    shadowLayer.fillColor = UIColor.white.cgColor
+
+    shadowLayer.shadowColor = UIColor.darkGray.cgColor
+    shadowLayer.shadowPath = shadowLayer.path
+    shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+    shadowLayer.shadowOpacity = 0.8
+    shadowLayer.shadowRadius = 2
+
+    titleLabel.layer.addSublayer(shadowLayer)
+  }
+  
   fileprivate func createCircleLayer() {
     //        circleLayer.frame = CGRectMake(frame.size.width - size, 0, size, size)
     let castParent : Floaty = superview as! Floaty
@@ -244,18 +260,6 @@ open class FloatyItem: UIView {
     circleLayer.shadowRadius = 2
     circleLayer.shadowColor = circleShadowColor.cgColor
     circleLayer.shadowOpacity = 0.4
-    
-    let shadowLayer = CAShapeLayer()
-    shadowLayer.path = UIBezierPath(roundedRect: titleLabel.bounds, cornerRadius: 6).cgPath
-    shadowLayer.fillColor = UIColor.white.cgColor
-
-    shadowLayer.shadowColor = UIColor.darkGray.cgColor
-    shadowLayer.shadowPath = shadowLayer.path
-    shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-    shadowLayer.shadowOpacity = 0.8
-    shadowLayer.shadowRadius = 2
-
-    titleLabel.layer.addSublayer(shadowLayer)
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
