@@ -247,11 +247,15 @@ open class FloatyItem: UIView {
     circleLayer.shadowOpacity = 0.4
     
     _titleLabel?.layer.cornerRadius = 6
-    _titleLabel?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-    _titleLabel?.layer.shadowOffset = CGSize(width: 1, height: 1)
-    _titleLabel?.layer.shadowOpacity = 0.4
-    _titleLabel?.layer.shadowRadius = 6
-    _titleLabel?.layer.masksToBounds = true
+    
+    let titleShadowView = UIView(frame: _titleLabel?.frame ?? CGRect.zero)
+    titleShadowView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+    titleShadowView.layer.shadowOffset = CGSize(width: 1, height: 1)
+    titleShadowView.layer.shadowOpacity = 0.4
+    titleShadowView.layer.shadowRadius = 6
+    titleShadowView.layer.masksToBounds = false
+    
+    _titleLabel?.addSubview(titleShadowView)
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
