@@ -152,7 +152,7 @@ open class Floaty: UIView {
    Child item's default title label color.
    */
   @objc @IBInspectable
-  open var itemTitleColor: UIColor = UIColor.white
+  open var itemTitleColor: UIColor = UIColor.black
   
   /**
    Child item's image color

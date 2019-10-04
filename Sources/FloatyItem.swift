@@ -112,6 +112,14 @@ open class FloatyItem: UIView {
         _titleLabel = UILabel()
         _titleLabel?.textColor = titleColor
         _titleLabel?.font = FloatyManager.defaultInstance().font
+        _titleLabel?.backgroundColor = .white
+        _titleLabel?.layer.cornerRadius = 6
+        _titleLabel?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        _titleLabel?.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        _titleLabel?.layer.shadowOpacity = 1.0
+        _titleLabel?.layer.shadowRadius = 0.0
+        _titleLabel?.layer.masksToBounds = false
+        _titleLabel?.layer.cornerRadius = 6
         addSubview(_titleLabel!)
       }
       return _titleLabel!
