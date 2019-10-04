@@ -227,7 +227,7 @@ open class FloatyItem: UIView {
     titleLabel.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(2.0))
     titleLabel.layer.shadowRadius = 1
     titleLabel.layer.shadowOpacity = 0.8
-    titleLabel.layer.cornerRadius = 5.0
+    titleLabel.layer.cornerRadius = 6
     titleLabel.layer.masksToBounds = false
     titleLabel.backgroundColor = .white
   }
