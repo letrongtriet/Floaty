@@ -113,13 +113,6 @@ open class FloatyItem: UIView {
         _titleLabel?.textColor = titleColor
         _titleLabel?.font = FloatyManager.defaultInstance().font
         _titleLabel?.backgroundColor = .white
-        _titleLabel?.layer.cornerRadius = 6
-        _titleLabel?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        _titleLabel?.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        _titleLabel?.layer.shadowOpacity = 1.0
-        _titleLabel?.layer.shadowRadius = 0.0
-        _titleLabel?.layer.masksToBounds = false
-        _titleLabel?.layer.cornerRadius = 6
         addSubview(_titleLabel!)
       }
       return _titleLabel!
@@ -131,7 +124,7 @@ open class FloatyItem: UIView {
    */
   @objc open var title: String? = nil {
     didSet {
-      titleLabel.text = title
+      titleLabel.text = "  \(title ?? "")  "
       titleLabel.sizeToFit()
       if(titleLabelPosition == .left) {
         titleLabel.frame.origin.x = -titleLabel.frame.size.width - 10
@@ -253,10 +246,13 @@ open class FloatyItem: UIView {
     circleLayer.shadowColor = circleShadowColor.cgColor
     circleLayer.shadowOpacity = 0.4
     
-    titleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
-    titleLabel.layer.shadowRadius = 2
-    titleLabel.layer.shadowColor = titleShadowColor.cgColor
-    titleLabel.layer.shadowOpacity = 0.4
+    _titleLabel?.layer.cornerRadius = 6
+    _titleLabel?.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+    _titleLabel?.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+    _titleLabel?.layer.shadowOpacity = 1.0
+    _titleLabel?.layer.shadowRadius = 0.0
+    _titleLabel?.layer.masksToBounds = false
+    _titleLabel?.layer.cornerRadius = 6
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
