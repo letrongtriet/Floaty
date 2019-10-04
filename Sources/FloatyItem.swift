@@ -257,7 +257,10 @@ open class FloatyItem: UIView {
     titleShadowView.layer.shadowRadius = 6
     titleShadowView.layer.masksToBounds = false
     
-    _titleLabel?.addSubview(titleShadowView)
+    titleShadowView.frame.origin.x = titleLabel.frame.origin.x
+    titleShadowView.frame.origin.y = titleLabel.frame.origin.y
+    
+    addSubview(titleShadowView)
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
