@@ -246,8 +246,8 @@ open class FloatyItem: UIView {
     circleLayer.shadowColor = circleShadowColor.cgColor
     circleLayer.shadowOpacity = 0.4
     
-    _titleLabel?.layer.cornerRadius = 6
-    _titleLabel?.layer.masksToBounds = true
+    titleLabel.layer.cornerRadius = 6
+    titleLabel.layer.masksToBounds = true
     
     let titleShadowView = UIView(frame: _titleLabel?.frame ?? CGRect.zero)
     titleShadowView.backgroundColor = .clear
