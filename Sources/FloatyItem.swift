@@ -112,7 +112,6 @@ open class FloatyItem: UIView {
         _titleLabel = UILabel()
         _titleLabel?.textColor = titleColor
         _titleLabel?.font = FloatyManager.defaultInstance().font
-        _titleLabel?.backgroundColor = .white
         addSubview(_titleLabel!)
       }
       return _titleLabel!
@@ -256,7 +255,7 @@ open class FloatyItem: UIView {
     shadowLayer.shadowOpacity = 0.8
     shadowLayer.shadowRadius = 2
 
-    titleLabel.layer.insertSublayer(shadowLayer, at: 0)
+    titleLabel.layer.addSublayer(shadowLayer)
   }
   
   open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
