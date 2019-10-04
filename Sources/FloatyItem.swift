@@ -249,7 +249,7 @@ open class FloatyItem: UIView {
     titleLabel.layer.masksToBounds = false
     titleLabel.layer.cornerRadius = 6
     titleLabel.layer.shadowColor = UIColor.black.cgColor
-    titleLabel.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+    titleLabel.layer.shadowPath = UIBezierPath(roundedRect: titleLabel.bounds, cornerRadius: titleLabel.layer.cornerRadius).cgPath
     titleLabel.shadowOffset = CGSize(width: 0.0, height: 3.0)
     titleLabel.layer.shadowOpacity = 0.5
     titleLabel.layer.shadowRadius = 1.0
