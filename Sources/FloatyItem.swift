@@ -41,7 +41,7 @@ open class FloatyItem: UIView {
    */
   @objc open var titleColor: UIColor = UIColor.black {
     didSet {
-      titleLabel.setTitleColor(titleColor, forState: .Normal)
+      titleLabel.setTitleColor(titleColor, for: .normal)
     }
   }
   
