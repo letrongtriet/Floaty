@@ -123,7 +123,7 @@ open class FloatyItem: UIView {
    */
   @objc open var title: String? = nil {
     didSet {
-      titleLabel.setTitle("  \(title ?? "")  ", for: .normal)
+      titleLabel.setTitle("    \(title ?? "")    ", for: .normal)
       titleLabel.sizeToFit()
       if(titleLabelPosition == .left) {
         titleLabel.frame.origin.x = -titleLabel.frame.size.width - 10
