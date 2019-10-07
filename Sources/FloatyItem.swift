@@ -41,7 +41,7 @@ open class FloatyItem: UIView {
    */
   @objc open var titleColor: UIColor = UIColor.white {
     didSet {
-      titleLabel.textColor = titleColor
+      titleLabel.titleLabel?.textColor = titleColor
     }
   }
   
@@ -105,13 +105,13 @@ open class FloatyItem: UIView {
   /**
    Item's title label.
    */
-  var _titleLabel: UILabel? = nil
-  @objc open var titleLabel: UILabel {
+  var _titleLabel: ShadowAndCornerRadiusButton? = nil
+  @objc open var titleLabel: ShadowAndCornerRadiusButton {
     get {
       if _titleLabel == nil {
-        _titleLabel = UILabel()
-        _titleLabel?.textColor = titleColor
-        _titleLabel?.font = FloatyManager.defaultInstance().font
+        _titleLabel = ShadowAndCornerRadiusButton()
+        _titleLabel?.titleLabel?.textColor = titleColor
+        _titleLabel?.titleLabel?.font = FloatyManager.defaultInstance().font
         addSubview(_titleLabel!)
       }
       return _titleLabel!
@@ -123,7 +123,7 @@ open class FloatyItem: UIView {
    */
   @objc open var title: String? = nil {
     didSet {
-      titleLabel.text = "  \(title ?? "")  "
+      titleLabel.titleLabel?.text = "  \(title ?? "")  "
       titleLabel.sizeToFit()
       if(titleLabelPosition == .left) {
         titleLabel.frame.origin.x = -titleLabel.frame.size.width - 10
@@ -216,20 +216,6 @@ open class FloatyItem: UIView {
     if _iconImageView != nil {
       bringSubviewToFront(_: iconImageView)
     }
-  }
-  
-  open override func layoutSubviews() {
-    super.layoutSubviews()
-    
-    titleLabel.layer.borderWidth = 0.2
-    titleLabel.layer.borderColor = UIColor.clear.cgColor
-    titleLabel.layer.shadowColor = UIColor.gray.cgColor
-    titleLabel.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(2.0))
-    titleLabel.layer.shadowRadius = 1
-    titleLabel.layer.shadowOpacity = 0.8
-    titleLabel.layer.cornerRadius = 6
-    titleLabel.layer.masksToBounds = false
-    titleLabel.backgroundColor = .white
   }
   
   fileprivate func createCircleLayer() {
