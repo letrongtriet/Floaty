@@ -39,7 +39,7 @@ open class FloatyItem: UIView {
   /**
    Title label color.
    */
-  @objc open var titleColor: UIColor = UIColor.white {
+  @objc open var titleColor: UIColor = UIColor.black {
     didSet {
       titleLabel.titleLabel?.textColor = titleColor
     }
